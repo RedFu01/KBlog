@@ -1,0 +1,12 @@
+C:\Users\Konrad\projects\KBlog\KBlog\bin\Static.KBlog.dll.config
+C:\Users\Konrad\projects\KBlog\KBlog\bin\Static.KBlog.dll
+C:\Users\Konrad\projects\KBlog\KBlog\bin\Static.KBlog.pdb
+C:\Users\Konrad\projects\KBlog\KBlog\obj\Debug\Static.KBlog.csprojResolveAssemblyReference.cache
+C:\Users\Konrad\projects\KBlog\KBlog\obj\Debug\Static.KBlog.dll
+C:\Users\Konrad\projects\KBlog\KBlog\obj\Debug\Static.KBlog.pdb
+C:\Users\Konrad\projects\KBlog\Static.KBlog\bin\Static.KBlog.dll
+C:\Users\Konrad\projects\KBlog\Static.KBlog\bin\Static.KBlog.pdb
+C:\Users\Konrad\projects\KBlog\Static.KBlog\obj\Debug\Static.KBlog.csprojResolveAssemblyReference.cache
+C:\Users\Konrad\projects\KBlog\Static.KBlog\obj\Debug\Static.KBlog.dll
+C:\Users\Konrad\projects\KBlog\Static.KBlog\obj\Debug\Static.KBlog.pdb
+C:\Users\Konrad\projects\KBlog\Static.KBlog\bin\Static.KBlog.dll.config

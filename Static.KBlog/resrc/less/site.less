@@ -1,0 +1,114 @@
+﻿@import 'mixins.less';
+
+html {
+    height: 100%;
+}
+
+html, body {
+    margin: 0;
+}
+
+body.home-page {
+    height: 100%;
+
+    .main, main {
+        max-width: none;
+        overflow: hidden;
+    }
+}
+
+.main, main {
+    height: 100%;
+    font-family: Consolas;
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+header {
+    font-family: Consolas;
+    color: @text-color;
+    max-width: 980px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+
+    a {
+        display: inline-block;
+        width: 50%;
+        position: relative;
+
+
+        &:hover {
+            img {
+                opacity: 1;
+            }
+
+            span {
+                opacity: 0.6;
+            }
+        }
+    }
+
+
+    span {
+        -moz-transition: opacity 1s;
+        -o-transition: opacity 1s;
+        -webkit-transition: opacity 1s;
+        transition: opacity 1s;
+        margin-top: -30px;
+        top: 50%;
+        right: 20px;
+        color: black;
+        position: absolute;
+        font-size: 50px;
+    }
+
+    img {
+        -moz-transition: opacity 1s;
+        -o-transition: opacity 1s;
+        -webkit-transition: opacity 1s;
+        transition: opacity 1s;
+        opacity: 0.6;
+        width: 100%;
+    }
+
+    a + a {
+        > span {
+            left: 20px;
+        }
+    }
+}
+
+figure {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, * {
+    margin: 0;
+}
+
+a {
+    color: @link-color;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 104px;
+    text-align: center;
+    font-weight: 700;
+
+    & + .email {
+        display: block;
+        text-align: right;
+        margin-top: -15px;
+        font-size: 18px;
+        padding-bottom: 50px;
+
+        > a {
+            color: black;
+        }
+    }
+}
+
+section {
+    color: @text-color;
+}

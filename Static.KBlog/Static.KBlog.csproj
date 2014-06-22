@@ -39,6 +39,12 @@
     <Content Include="resrc\img\pinterest-icon.jpg" />
     <Content Include="resrc\img\twitter-icon-hover.jpg" />
     <Content Include="resrc\img\twitter-icon.jpg" />
+    <Content Include="resrc\less\about.css">
+      <DependentUpon>about.less</DependentUpon>
+    </Content>
+    <Content Include="resrc\less\about.min.css">
+      <DependentUpon>about.css</DependentUpon>
+    </Content>
     <Content Include="resrc\less\all.css">
       <DependentUpon>all.less</DependentUpon>
     </Content>
@@ -50,6 +56,12 @@
     </Content>
     <Content Include="resrc\less\blog.min.css">
       <DependentUpon>blog.css</DependentUpon>
+    </Content>
+    <Content Include="resrc\less\home.css">
+      <DependentUpon>home.less</DependentUpon>
+    </Content>
+    <Content Include="resrc\less\home.min.css">
+      <DependentUpon>home.css</DependentUpon>
     </Content>
     <Content Include="resrc\less\mixins.css">
       <DependentUpon>mixins.less</DependentUpon>
@@ -69,6 +81,7 @@
     <Content Include="resrc\less\socialmedia.min.css">
       <DependentUpon>socialmedia.css</DependentUpon>
     </Content>
+    <Content Include="resrc\libs\jquery.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +105,14 @@
     <Content Include="resrc\less\mixins.css.map">
       <DependentUpon>mixins.css</DependentUpon>
     </Content>
+    <Content Include="resrc\less\home.less" />
+    <Content Include="resrc\less\home.css.map">
+      <DependentUpon>home.css</DependentUpon>
+    </Content>
+    <Content Include="resrc\less\about.less" />
+    <Content Include="resrc\less\about.css.map">
+      <DependentUpon>about.css</DependentUpon>
+    </Content>
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -101,7 +122,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <TypeScriptCompile Include="resrc\ts\ContentLoader.ts" />
+    <TypeScriptCompile Include="resrc\ts\d.ts\jquery.d.ts" />
     <TypeScriptCompile Include="resrc\ts\KBlog.ts" />
+    <TypeScriptCompile Include="resrc\ts\Utils.ts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

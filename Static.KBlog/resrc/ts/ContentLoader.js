@@ -5,6 +5,7 @@ var ContentLoader = (function () {
     ContentLoader.prototype.getContent = function (start, screenSize, PHPhandler, callback) {
         var request = $.ajax({
             url: PHPhandler,
+            cache: false,
             data: {
                 start: start,
                 screenSize: screenSize
@@ -12,6 +13,7 @@ var ContentLoader = (function () {
         });
         request.done(function (data) {
             callback($(data));
+            $(document).trigger('contentAdded');
         });
     };
     return ContentLoader;

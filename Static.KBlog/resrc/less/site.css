@@ -20,18 +20,6 @@ main {
   font-family: Consolas;
   max-width: 980px;
   margin: 0 auto;
-  overflow: hidden;
-}
-.edit-icon {
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-  background-color: #BBBBBB;
-  outline: white 1px solid;
-  content: '+';
-}
-.edit-icon:hover {
-  background-color: #777;
 }
 header {
   font-family: Consolas;

@@ -1,12 +1,14 @@
 ﻿/// <reference path="d.ts/jquery.d.ts" />
 /// <reference path="contentloader.ts" />
 /// <reference path="utils.ts" />
+/// <reference path="backend.ts" />
 var KBlog;
 (function (KBlog) {
     var isMobile = false;
     var LoadHandler = 'http://localhost:49566/content_viviana.html';
     var reloadOffset = isMobile ? 100 : 500;
-    KBlog.Loader = new ContentLoader;
+    KBlog.Loader = new ContentLoader();
+    KBlog.Backend = new KBlogBackend();
     function init() {
         if (window.location.href.indexOf('backend=true') != -1) {
             $('.login').css('display', 'block');

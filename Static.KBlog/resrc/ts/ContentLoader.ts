@@ -7,6 +7,7 @@ class ContentLoader {
     getContent(start: number, screenSize: number, PHPhandler: string, callback: any) {
         var request = $.ajax({
             url: PHPhandler,
+            cache: false,
             data: {
                 start: start,
                 screenSize: screenSize,
@@ -14,6 +15,7 @@ class ContentLoader {
         });
         request.done((data) => {
             callback($(data));
+            $(document).trigger('contentAdded');
         });
     }
 }

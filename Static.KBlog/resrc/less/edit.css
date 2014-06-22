@@ -1,0 +1,41 @@
+﻿.edit-icon {
+  z-index: 30;
+  position: absolute;
+  right: -36px;
+  top: 0;
+  margin-top: 0;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  background-color: #BBBBBB;
+  outline: white 1px solid;
+  color: white;
+  background-image: url(../img/edit-icon.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.edit-icon:hover {
+  background-color: #777;
+}
+.blogpost .date .edit-icon {
+  top: -7px;
+}
+.blogpost figure .edit-icon {
+  margin-top: 0;
+  top: 10px;
+  right: 10px;
+}
+.dropzone {
+  cursor: pointer;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  top: 20px;
+  bottom: 80px;
+  background: rgba(255, 255, 255, 0.6);
+}
+.dropzone span {
+  padding-right: 30px;
+  padding-top: 10px;
+}
+/*# sourceMappingURL=edit.css.map */

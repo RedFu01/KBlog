@@ -60,6 +60,12 @@
     <Content Include="resrc\less\blog.min.css">
       <DependentUpon>blog.css</DependentUpon>
     </Content>
+    <Content Include="resrc\less\edit.css">
+      <DependentUpon>edit.less</DependentUpon>
+    </Content>
+    <Content Include="resrc\less\edit.min.css">
+      <DependentUpon>edit.css</DependentUpon>
+    </Content>
     <Content Include="resrc\less\home.css">
       <DependentUpon>home.less</DependentUpon>
     </Content>
@@ -84,6 +90,7 @@
     <Content Include="resrc\less\socialmedia.min.css">
       <DependentUpon>socialmedia.css</DependentUpon>
     </Content>
+    <Content Include="resrc\libs\dropzone.js" />
     <Content Include="resrc\libs\jquery.js" />
     <Content Include="web.config" />
   </ItemGroup>
@@ -116,6 +123,10 @@
     <Content Include="resrc\less\about.css.map">
       <DependentUpon>about.css</DependentUpon>
     </Content>
+    <Content Include="resrc\less\edit.less" />
+    <Content Include="resrc\less\edit.css.map">
+      <DependentUpon>edit.css</DependentUpon>
+    </Content>
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
@@ -125,8 +136,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <TypeScriptCompile Include="resrc\ts\Backend.ts" />
     <TypeScriptCompile Include="resrc\ts\BackendAccess.ts" />
     <TypeScriptCompile Include="resrc\ts\ContentLoader.ts" />
+    <TypeScriptCompile Include="resrc\ts\d.ts\dropzone.d.ts" />
     <TypeScriptCompile Include="resrc\ts\d.ts\jquery.d.ts" />
     <TypeScriptCompile Include="resrc\ts\KBlog.ts" />
     <TypeScriptCompile Include="resrc\ts\Utils.ts" />

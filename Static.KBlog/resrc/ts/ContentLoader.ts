@@ -4,8 +4,7 @@ class ContentLoader {
     constructor() {
 
     }
-    getContent(start: number, screenSize: number, PHPhandler: string): JQuery {
-        var result: JQuery;
+    getContent(start: number, screenSize: number, PHPhandler: string, callback: any) {
         var request = $.ajax({
             url: PHPhandler,
             data: {
@@ -14,9 +13,7 @@ class ContentLoader {
             }
         });
         request.done((data) => {
-            result = $(data);
+            callback($(data));
         });
-        return result;
-
     }
 }

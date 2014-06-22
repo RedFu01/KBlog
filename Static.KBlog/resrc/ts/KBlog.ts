@@ -3,26 +3,36 @@
 /// <reference path="utils.ts" />
 
 module KBlog {
-    var LoadHandler = 'http://localhost:49566/blog_viviana.html';
+    var isMobile = false;
+    var LoadHandler = 'http://localhost:49566/content_viviana.html';
+    var reloadOffset: number = isMobile ? 100 : 500;
     export var Loader = new ContentLoader;
     export function init() {
-        addContent();
+        if (window.location.href.indexOf('backend=true') != -1) {
+            $('.login').css('display', 'block');
+        }
+
+        //simulate network latency
+        setTimeout(() => {
+            addContent();
+        }, 3000)
 
         $(window).scroll(scrollHandler);
     }
 
     export function addContent() {
-        alert('hi :)');
-        var content = Loader.getContent(Utils.getStartNumber(), $(window).outerWidth(), LoadHandler);
-        $('.main').append(content);
+        Loader.getContent(Utils.getStartNumber(), $(window).outerWidth(), LoadHandler, KBlog.appendContent);
+
+    }
+    export function appendContent(content: JQuery) {
+        content.insertBefore($('.main .loading'));
     }
 
     export function scrollHandler(e) {
-        if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
+        if ($(window).scrollTop() + $(window).height() > $(document).height() - reloadOffset) {
             addContent();
         }
     }
-
 
 }
 $(document).ready(KBlog.init());

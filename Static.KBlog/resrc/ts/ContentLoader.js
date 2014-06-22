@@ -2,8 +2,7 @@
 var ContentLoader = (function () {
     function ContentLoader() {
     }
-    ContentLoader.prototype.getContent = function (start, screenSize, PHPhandler) {
-        var result;
+    ContentLoader.prototype.getContent = function (start, screenSize, PHPhandler, callback) {
         var request = $.ajax({
             url: PHPhandler,
             data: {
@@ -12,9 +11,8 @@ var ContentLoader = (function () {
             }
         });
         request.done(function (data) {
-            result = $(data);
+            callback($(data));
         });
-        return result;
     };
     return ContentLoader;
 })();

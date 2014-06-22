@@ -22,6 +22,20 @@ body.home-page {
     font-family: Consolas;
     max-width: 980px;
     margin: 0 auto;
+    overflow: hidden;
+}
+
+.edit-icon {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    background-color: #BBBBBB;
+    outline: white 1px solid;
+    content: '+';
+
+    &:hover {
+        background-color: #777;
+    }
 }
 
 header {
@@ -111,4 +125,65 @@ h1 {
 
 section {
     color: @text-color;
+}
+
+.login {
+    display: none;
+    right: 0;
+    position: fixed;
+    z-index: 9999;
+    padding: 30px;
+    margin: 30px;
+    outline: 1px solid black;
+    background: white;
+
+    div {
+        padding-bottom: 10px;
+    }
+
+    span {
+        width: 100px;
+        display: inline-block;
+    }
+
+    input {
+        padding: 4px;
+        width: 160px;
+        outline: none;
+        border-width: 2px;
+
+        &.fail {
+            border: 2px solid red;
+            -moz-box-shadow: 0 0 3px red;
+            -webkit-box-shadow: 0 0 3px red;
+            box-shadow: 0 0 3px red;
+        }
+    }
+
+    a {
+        color: black;
+        display: block;
+        margin: 0 auto;
+        max-width: 70px;
+        text-align: center;
+        padding: 2px;
+        cursor: pointer;
+        outline: 1px solid;
+        margin-top: 12px;
+
+        &:hover {
+            background-image: url(../img/login-bg.png);
+        }
+    }
+}
+
+.loading {
+    margin: 0 auto;
+    display: block;
+}
+
+@media screen and (max-width: 1000px) {
+    main, .main {
+        margin: 0 10px;
+    }
 }

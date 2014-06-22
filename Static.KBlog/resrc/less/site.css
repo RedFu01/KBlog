@@ -20,6 +20,18 @@ main {
   font-family: Consolas;
   max-width: 980px;
   margin: 0 auto;
+  overflow: hidden;
+}
+.edit-icon {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  background-color: #BBBBBB;
+  outline: white 1px solid;
+  content: '+';
+}
+.edit-icon:hover {
+  background-color: #777;
 }
 header {
   font-family: Consolas;
@@ -95,5 +107,58 @@ h1 + .email > a {
 }
 section {
   color: #000000;
+}
+.login {
+  display: none;
+  right: 0;
+  position: fixed;
+  z-index: 9999;
+  padding: 30px;
+  margin: 30px;
+  outline: 1px solid black;
+  background: white;
+}
+.login div {
+  padding-bottom: 10px;
+}
+.login span {
+  width: 100px;
+  display: inline-block;
+}
+.login input {
+  padding: 4px;
+  width: 160px;
+  outline: none;
+  border-width: 2px;
+}
+.login input.fail {
+  border: 2px solid red;
+  -moz-box-shadow: 0 0 3px red;
+  -webkit-box-shadow: 0 0 3px red;
+  box-shadow: 0 0 3px red;
+}
+.login a {
+  color: black;
+  display: block;
+  margin: 0 auto;
+  max-width: 70px;
+  text-align: center;
+  padding: 2px;
+  cursor: pointer;
+  outline: 1px solid;
+  margin-top: 12px;
+}
+.login a:hover {
+  background-image: url(../img/login-bg.png);
+}
+.loading {
+  margin: 0 auto;
+  display: block;
+}
+@media screen and (max-width: 1000px) {
+  main,
+  .main {
+    margin: 0 10px;
+  }
 }
 /*# sourceMappingURL=site.css.map */

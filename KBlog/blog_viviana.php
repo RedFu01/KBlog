@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
 <?php
-include "../blogHead.php";
+include "./blogHead.php";
 ?>
 <html>
 <head>

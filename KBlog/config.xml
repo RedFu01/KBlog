@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionString>
+  	<server>localhost</server>
+  	<userName>root</userName>
+  	<password></password>
+  </connectionString>
+  <database>
+  	<name>thesenseoffashion</name>
+  	<tables>
+  		<usertable>
+  			<insert>"INSERT INTO `userdb`(`name`, `passord`) VALUES"</insert>
+  			<update>""</update>
+  		</usertable>
+  		<content>
+  			<insert>"INSERT INTO `content`(`ContentData`) VALUES ('testContent')"</insert>
+  			<update>""</update>
+  		</content>
+  		<blogpost>
+  			<insert>"INSERT INTO `content`(`ContentData`) VALUES ('testContent')"</insert>
+  			<update>""</update>
+  		</blogpost>
+  	</tables>
+  </database>
+</configuration>

@@ -1,0 +1,31 @@
+
+Bsp 1
+{[
+  "Heading":0,
+  "Text": 1,
+  "Image": 2,
+  "Image": 3,
+  "Image": "4",
+  "Text": "1"
+]}
+
+Bsp 2
+
+{"elements":[
+	{"id": "1","type":"headline", "language":"de"},
+	{"id": "2","type":"text", "language":"all"},
+	{"id": "3","type":"image", "language":"all"},
+	{"id": "4","type":"image", "language":"all"},
+	{"id": "5","type":"image", "language":"all"},
+	{"id": "6","type":"headline", "language":"de"},
+]}
+
+ Bsp 3
+{"elements":[
+	{"id": "1","type":"headline"},
+	{"id": "2","type":"text"},
+	{"id": "3","type":"image"},
+	{"id": "4","type":"image"},
+	{"id": "5","type":"image"},
+	{"id": "6","type":"headline"},
+]}

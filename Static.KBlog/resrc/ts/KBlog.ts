@@ -8,7 +8,6 @@ module KBlog {
     var LoadHandler = 'http://localhost:49566/content_viviana.html';
     var reloadOffset: number = isMobile ? 100 : 500;
     export var Loader = new ContentLoader();
-    export var Backend = new KBlogBackend();
     export function init() {
         if (window.location.href.indexOf('backend=true') != -1) {
             $('.login').css('display', 'block');

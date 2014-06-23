@@ -1,4 +1,4 @@
-﻿.edit-icon {
+﻿.edit-icon, .save-icon {
     z-index: 30;
     position: absolute;
     right: -36px;
@@ -47,4 +47,30 @@
         padding-right: 30px;
         padding-top: 10px;
     }
+}
+
+.inEditMode, .edit {
+    outline: #a5c7fe 1px solid;
+    margin-top: 35px;
+}
+
+.save-icon {
+    background-image: url(../img/save-icon.png);
+}
+
+.message-box {
+    -moz-transition: left 1s;
+    -o-transition: left 1s;
+    -webkit-transition: left 1s;
+    transition: left 1s;
+    background-color: #DDDDDD;
+    min-height: 30px;
+    line-height: 30px;
+    top: 20px;
+    position: fixed;
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+    left: -240px;
+    outline: black;
 }

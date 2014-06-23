@@ -354,7 +354,8 @@ section {
 .about p {
   text-align: center;
 }
-.edit-icon {
+.edit-icon,
+.save-icon {
   z-index: 30;
   position: absolute;
   right: -36px;
@@ -370,7 +371,8 @@ section {
   background-position: center center;
   background-repeat: no-repeat;
 }
-.edit-icon:hover {
+.edit-icon:hover,
+.save-icon:hover {
   background-color: #777;
 }
 .blogpost .date .edit-icon {
@@ -393,5 +395,29 @@ section {
 .dropzone span {
   padding-right: 30px;
   padding-top: 10px;
+}
+.inEditMode,
+.edit {
+  outline: #a5c7fe 1px solid;
+  margin-top: 35px;
+}
+.save-icon {
+  background-image: url(../img/save-icon.png);
+}
+.message-box {
+  -moz-transition: left 1s;
+  -o-transition: left 1s;
+  -webkit-transition: left 1s;
+  transition: left 1s;
+  background-color: #DDDDDD;
+  min-height: 30px;
+  line-height: 30px;
+  top: 20px;
+  position: fixed;
+  width: 200px;
+  text-align: center;
+  padding: 20px;
+  left: -240px;
+  outline: black;
 }
 /*# sourceMappingURL=all.css.map */

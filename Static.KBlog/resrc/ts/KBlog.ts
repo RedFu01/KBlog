@@ -5,7 +5,7 @@
 
 module KBlog {
     var isMobile = false;
-    var LoadHandler = '/ajaxHandler.php';
+    var LoadHandler = '../ajaxHandler.php';
     var reloadOffset: number = isMobile ? 100 : 500;
     export var Loader = new ContentLoader();
     export function init() {

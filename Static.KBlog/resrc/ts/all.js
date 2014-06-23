@@ -42,7 +42,7 @@ var ContentLoader = (function () {
 var KBlog;
 (function (KBlog) {
     var isMobile = false;
-    var LoadHandler = 'http://localhost:49566/content_viviana.html';
+    var LoadHandler = '../ajaxHandler.php';
     var reloadOffset = isMobile ? 100 : 500;
     KBlog.Loader = new ContentLoader();
     function init() {

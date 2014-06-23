@@ -6,44 +6,66 @@
 	class PhpHandler {
 		private $config = null;
 
-		public function PhpHandler($conf) {
+		public function PhpHandler( $conf ) {
 			$this->config = $conf;
 		}
 
 		/*
 		* param table - table where content should be inserted
-		* param data
+		* param val - values to be added 
 		*/
-		public function addToTable ( $table, $val1=null, $val2=null, $val3=null ){ 
-			$sqlQuery = $config->getQuery( $table );
-			switch ($table) {
-				case 'content':
-					mysql_query($config->getQuery( $table )."(".$val1.")") or die ("Failed to add content!");
-					break;
-				case 'blogpost':
-					mysql_query($sqlQuery."('".$val1."','".$val2."','".$val3."')") or die ("Failed to add content!");
-					break;
-				case 'usertable':
-					mysql_query($sqlQuery."('".$val1."','".$val2."')") or die ("Failed to add content!");
-					break;
-				default:
-					break;
+		public function addToTable ( $table, $val ){ 
+			$sqlQuery = $this->config;
+			if ( $val == null ) {
+				echo "Log: insert values not defined;"; 
+				break;
 			}
+			$query = $sqlQuery->getValue( "table", $table, "insert" );
+			$i=1;
+			$query =str_replace( "table", $table, $query );
+			foreach ( $val as $value ) {
+				$query =str_replace( "val".$i."", $value, $query );
+				$i++;
+			}
+			mysql_query($query) or die ( "Failed to add content!" );
 		}
 
 		/*
 		* param id
 		* param data
 		*/
-		public function updateTable ( $id ){
-			mysql_query("UPDATE `content` SET `ContentData` = 'testChanged' WHERE id='".$id."'") or die ("Failed to update content!");
+		public function updateTable ( $table, $id, $val ){
+			$sqlQuery = $this->config;
+			if ( $val == null || $id == null ) {
+				echo "Log: insert values or id not defined"; 
+				break;
+			}
+			$query = $sqlQuery->getValue( "table", $table, "update" );
+			$i=1;
+			$query =str_replace( "table", $table, $query );
+			$query =str_replace( "idx", $id, $query );
+			foreach ($val as $value) {
+				$query =str_replace( "val".$i."", $value, $query );
+				$i++;
+			}
+			echo $query;
+			mysql_query($query) or die ( "Failed to add content!" );
 		}
 
 		/*
 		* param id
 		*/
-		public function deleteContent ( $id ){
-			mysql_query("DELETE FROM `content` WHERE id = '".$id."'");
+		public function deleteInTable ( $table, $id ){
+			$sqlQuery = $this->config;
+			if ($id == null ) {
+				echo "Log: id not defined"; 
+				break;
+			}
+			$query = $sqlQuery->getValue( "table", $table, "delete" );
+			$query =str_replace( "table", $table, $query );
+			$query =str_replace( "idx", $id, $query );
+			echo $query;
+			mysql_query( $query ) or die ( "Failed to add content!" );
 		}
 		public function imageUploader ( $img ){
 			echo "works";
@@ -56,48 +78,33 @@
 		* param numPost numer of posts to be returned
 		* @return blogpostArr - 2 dimensional Array. first colum contains postContent, second column contains postType.
 		*/
-		public function getBlogpost($uid, $numPost, $startId=null) {
+		public function getBlogpost( $uid, $numPost, $startId=null ) {
 
-			$request = mysql_query("SELECT * FROM blogpost WHERE uid='".$uid."' AND id > '".$startId."'");
+			$request = mysql_query( "SELECT * FROM blogpost WHERE uid='".$uid."' AND id > '".$startId."'" );
 
 			$userPosts = null; //Array
 			$j=0;
-			while ($post = mysql_fetch_array($request, MYSQL_ASSOC)) {
+			while ( $post = mysql_fetch_array( $request, MYSQL_ASSOC )) {
 
-				if ($numPost <= $j){break;}
-
-				//echo "<pre>";
-			    //print_r($post);
-			    //echo "</pre>";
-
-				$decodeJson = json_decode($post["postContent"]);
+				if ( $numPost <= $j ){
+					break;
+				}
+				$decodeJson = json_decode( $post["postContent"] );
 				$i=0;
-				// echo "<pre>";
-				// print_r($decodeJson);
-				// echo "</pre>";
-				foreach($decodeJson->elements as $rows)
-				{
+				foreach( $decodeJson->elements as $rows ) {
 				 	$blogpostArr[$i]["postContent"] = $this->getElementbyId($rows->id);
 				 	$blogpostArr[$i]["postType"] = $rows->type;
 				 	$i++;
 				}
-				// echo "<pre>";
-				// print_r($blogpostArr);
-				// echo "</pre>";
-
 				$userPosts[$j] = $blogpostArr;
 				$j++;
 			}
-			
-			// echo "<pre>";
-			// print_r($blogpostArr);
-			// echo "</	pre>";
 
 			return($userPosts);
 		}
 
-		public function getElementbyId($id) {
-			return(mysql_fetch_row(mysql_query("SELECT ContentData FROM content WHERE id = '".$id."'"))[0]);
+		public function getElementbyId( $id ) {
+			return( mysql_fetch_row ( mysql_query ( "SELECT ContentData FROM content WHERE id = '".$id."'" ))[0] );
 		}
 
 	}

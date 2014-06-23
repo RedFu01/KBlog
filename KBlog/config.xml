@@ -8,18 +8,21 @@
   <database>
   	<name>thesenseoffashion</name>
   	<tables>
-  		<usertable>
-  			<insert>"INSERT INTO `userdb`(`name`, `passord`) VALUES"</insert>
-  			<update>""</update>
-  		</usertable>
-  		<content>
-  			<insert>"INSERT INTO `content`(`ContentData`) VALUES ('testContent')"</insert>
-  			<update>""</update>
-  		</content>
-  		<blogpost>
-  			<insert>"INSERT INTO `content`(`ContentData`) VALUES ('testContent')"</insert>
-  			<update>""</update>
-  		</blogpost>
+  		<table name="usertable" >
+  			<insert>INSERT INTO `usertable`(`name`, `passord`) VALUES ('val1', val2)</insert>
+  			<update>UPDATE `usertable` SET `name` = 'val1, `password` = 'val2' WHERE id='idx'</update>
+  			<delete>DELETE FROM `content` WHERE id = 'idx'</delete>
+  		</table>
+  		<table name="content">
+  			<insert>INSERT INTO `table`(`ContentData`) VALUES ('val1')</insert>
+  			<update>UPDATE `table` SET `ContentData` = 'val1' WHERE id='idx'</update>
+  			<delete>DELETE FROM `table` WHERE id = 'idx'</delete>
+  		</table>
+  		<table name="blogpost">
+  			<insert>INSERT INTO `table`(`postContent`, `visibility`, `uid`) VALUES ('val1','val2','val3')</insert>
+  			<update>UPDATE `table` SET `postContent` = 'val1', `visibility` = 'val2', `uid` = 'val3' WHERE id='idx'</update>
+  			<delete>DELETE FROM `table` WHERE id = 'idx'</delete>
+  		</table>
   	</tables>
   </database>
 </configuration>

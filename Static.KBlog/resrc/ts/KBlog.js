@@ -5,9 +5,10 @@
 var KBlog;
 (function (KBlog) {
     var isMobile = false;
-    var LoadHandler = '../ajaxHandler.php';
+    var LoadHandler = 'http://localhost:49566/content_viviana.html';
     var reloadOffset = isMobile ? 100 : 500;
     KBlog.Loader = new ContentLoader();
+    KBlog.be = new KBlogBackend();
     function init() {
         if (window.location.href.indexOf('backend=true') != -1) {
             $('.login').css('display', 'block');

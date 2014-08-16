@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{D6FD13DB-99D7-4ACA-9BF7-7DE517130AF1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <OutputPath>bin</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <TypeScriptToolsVersion>1.0</TypeScriptToolsVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="ajax.html" />
+    <Content Include="heroTeaser.html" />
+    <Content Include="index.html" />
+    <Content Include="Media\5F4A4777.jpg" />
+    <Content Include="Media\ann.JPG" />
+    <Content Include="Media\anni.jpg" />
+    <Content Include="Media\image-1.jpg" />
+    <Content Include="Media\image-2.jpg" />
+    <Content Include="Media\image-3.jpg" />
+    <Content Include="Media\image-4.JPG" />
+    <Content Include="Media\image-5.jpg" />
+    <Content Include="Media\image-6.jpg" />
+    <Content Include="Media\image-7.jpg" />
+    <Content Include="Media\image-8.JPG" />
+    <Content Include="Media\nav-1.JPG" />
+    <Content Include="Media\nav-2.jpg" />
+    <Content Include="Media\viv.jpg" />
+    <Content Include="Media\vivi.jpg" />
+    <Content Include="resrc\fonts\fontawesome-webfont.svg" />
+    <Content Include="resrc\img\edit-icon.png" />
+    <Content Include="resrc\img\facebook-icon-hover.jpg" />
+    <Content Include="resrc\img\facebook-icon.jpg" />
+    <Content Include="resrc\img\google-icon-hover.jpg" />
+    <Content Include="resrc\img\google-icon.jpg" />
+    <Content Include="resrc\img\loading.gif" />
+    <Content Include="resrc\img\login-bg.png" />
+    <Content Include="resrc\img\pinterest-icon-hover.jpg" />
+    <Content Include="resrc\img\pinterest-icon.jpg" />
+    <Content Include="resrc\img\save-icon.png" />
+    <Content Include="resrc\img\twitter-icon-hover.jpg" />
+    <Content Include="resrc\img\twitter-icon.jpg" />
+    <Content Include="resrc\less\contentPart.css">
+      <DependentUpon>contentPart.less</DependentUpon>
+    </Content>
+    <Content Include="resrc\less\contentPart.min.css">
+      <DependentUpon>contentPart.css</DependentUpon>
+    </Content>
+    <Content Include="resrc\less\module.css">
+      <DependentUpon>module.less</DependentUpon>
+    </Content>
+    <Content Include="resrc\less\module.min.css">
+      <DependentUpon>module.css</DependentUpon>
+    </Content>
+    <Content Include="resrc\libs\annotate.css" />
+    <Content Include="resrc\libs\BackendJS.js" />
+    <Content Include="resrc\libs\dropzone.js" />
+    <Content Include="resrc\libs\font-awesome.min.css" />
+    <Content Include="resrc\libs\fontawesome\css\font-awesome-ie7.css" />
+    <Content Include="resrc\libs\fontawesome\css\font-awesome.css" />
+    <Content Include="resrc\libs\fontawesome\font\fontawesome-webfont.svg" />
+    <Content Include="resrc\libs\hallo.css" />
+    <Content Include="resrc\libs\hallo.js" />
+    <Content Include="resrc\libs\images\animated-overlay.gif" />
+    <Content Include="resrc\libs\images\arrow.png" />
+    <Content Include="resrc\libs\images\divider.png" />
+    <Content Include="resrc\libs\images\drop_left.png" />
+    <Content Include="resrc\libs\images\pager_arrows.png" />
+    <Content Include="resrc\libs\images\tabicon_search.png" />
+    <Content Include="resrc\libs\images\tabicon_suggestions.png" />
+    <Content Include="resrc\libs\images\tabicon_upload.png" />
+    <Content Include="resrc\libs\images\trash.png" />
+    <Content Include="resrc\libs\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="resrc\libs\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="resrc\libs\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="resrc\libs\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="resrc\libs\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="resrc\libs\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="resrc\libs\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="resrc\libs\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="resrc\libs\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="resrc\libs\images\ui-icons_222222_256x240.png" />
+    <Content Include="resrc\libs\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="resrc\libs\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="resrc\libs\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="resrc\libs\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-icons_222222_256x240.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-icons_454545_256x240.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-icons_888888_256x240.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\images\ui-icons_f6cf3b_256x240.png" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\jquery-ui-1.8.16.custom.css" />
+    <Content Include="resrc\libs\jquery-ui-bootstrap\css\custom-theme\jquery.ui.1.8.16.ie.css" />
+    <Content Include="resrc\libs\jquery-ui.js" />
+    <Content Include="resrc\libs\jquery.htmlClean.js" />
+    <Content Include="resrc\libs\jquery.js" />
+    <Content Include="resrc\libs\jquery.tmpl.js" />
+    <Content Include="resrc\libs\rangy-core.js" />
+    <Content Include="resrc\templates\heroTeaser.html" />
+    <Content Include="resrc\ts\all.js">
+      <DependentUpon>all.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="resrc\ts\pages.js" />
+    <Content Include="Scripts\collections.js" />
+    <Content Include="web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="resrc\ts\contentLoader.ts" />
+    <TypeScriptCompile Include="resrc\ts\d.ts\basic.d.ts" />
+    <TypeScriptCompile Include="resrc\ts\d.ts\dropzone.d.ts" />
+    <TypeScriptCompile Include="resrc\ts\d.ts\jquery.d.ts" />
+    <TypeScriptCompile Include="resrc\ts\d.ts\jquery.tmpl.d.ts" />
+    <TypeScriptCompile Include="resrc\ts\heroTeaser.ts" />
+    <TypeScriptCompile Include="resrc\ts\main.ts" />
+    <TypeScriptCompile Include="resrc\ts\pages.ts" />
+    <TypeScriptCompile Include="resrc\ts\templateRenderer.ts" />
+    <TypeScriptCompile Include="Scripts\collections.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resrc\fonts\fontawesome-webfont.eot" />
+    <Content Include="resrc\fonts\fontawesome-webfont.ttf" />
+    <Content Include="resrc\fonts\fontawesome-webfont.woff" />
+    <Content Include="resrc\fonts\FontAwesome.otf" />
+    <Content Include="resrc\libs\BackendJS.js.bundle" />
+    <Content Include="resrc\libs\fontawesome\font\fontawesome-webfont.eot" />
+    <Content Include="resrc\libs\fontawesome\font\fontawesome-webfont.svgz" />
+    <Content Include="resrc\libs\fontawesome\font\fontawesome-webfont.ttf" />
+    <Content Include="resrc\libs\fontawesome\font\fontawesome-webfont.woff" />
+    <Content Include="resrc\libs\fontawesome\README.md" />
+    <Content Include="resrc\ts\all.js.bundle" />
+    <Content Include="resrc\less\module.less" />
+    <Content Include="resrc\less\contentPart.less" />
+    <Content Include="resrc\less\all.less" />
+    <Content Include="resrc\less\main.less" />
+    <Content Include="Scripts\collections.js.map" />
+    <Content Include="packages.config" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="obj\Release\TempPE\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>Static.KBlog2._0</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53230</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:53230/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptRemoveComments>false</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>true</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptRemoveComments>true</TypeScriptRemoveComments>
+    <TypeScriptSourceMap>false</TypeScriptSourceMap>
+    <TypeScriptModuleKind>AMD</TypeScriptModuleKind>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(VSToolsPath)\TypeScript\Microsoft.TypeScript.targets')" />
+</Project>

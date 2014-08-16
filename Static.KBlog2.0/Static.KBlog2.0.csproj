@@ -17,6 +17,7 @@
     <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <ItemGroup>
+    <Content Include="ajax.html" />
     <Content Include="index.html" />
     <Content Include="Media\5F4A4777.jpg" />
     <Content Include="Media\ann.JPG" />
@@ -109,7 +110,13 @@
     <Content Include="resrc\libs\jquery-ui.js" />
     <Content Include="resrc\libs\jquery.htmlClean.js" />
     <Content Include="resrc\libs\jquery.js" />
+    <Content Include="resrc\libs\jquery.tmpl.js" />
     <Content Include="resrc\libs\rangy-core.js" />
+    <Content Include="resrc\templates\heroTeaser.html" />
+    <Content Include="resrc\ts\all.js">
+      <DependentUpon>all.js.bundle</DependentUpon>
+    </Content>
+    <Content Include="resrc\ts\pages.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +126,7 @@
     <TypeScriptCompile Include="resrc\ts\d.ts\jquery.d.ts" />
     <TypeScriptCompile Include="resrc\ts\d.ts\jquery.tmpl.d.ts" />
     <TypeScriptCompile Include="resrc\ts\modules.ts" />
+    <TypeScriptCompile Include="resrc\ts\pages.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="resrc\fonts\fontawesome-webfont.eot" />
@@ -135,6 +143,8 @@
     <Content Include="resrc\less\module.less" />
     <Content Include="resrc\less\contentPart.less" />
     <Content Include="resrc\less\all.less" />
+    <Content Include="resrc\less\main.less" />
+    <Content Include="ajaxHandler.php" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

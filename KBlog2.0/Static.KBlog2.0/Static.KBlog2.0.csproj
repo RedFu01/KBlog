@@ -128,7 +128,9 @@
     <TypeScriptCompile Include="resrc\ts\d.ts\jquery.d.ts" />
     <TypeScriptCompile Include="resrc\ts\d.ts\jquery.tmpl.d.ts" />
     <TypeScriptCompile Include="resrc\ts\heroTeaser.ts" />
+    <TypeScriptCompile Include="resrc\ts\KBlog.ts" />
     <TypeScriptCompile Include="resrc\ts\main.ts" />
+    <TypeScriptCompile Include="resrc\ts\PageLoader.ts" />
     <TypeScriptCompile Include="resrc\ts\pages.ts" />
     <TypeScriptCompile Include="resrc\ts\templateRenderer.ts" />
     <TypeScriptCompile Include="Scripts\collections.ts" />

@@ -4,24 +4,48 @@
 var ContentLoader = (function () {
     function ContentLoader() {
         this.contentObj = null;
+        this.cpTemplateDict = new collections.Dictionary();
     }
     ContentLoader.prototype.getContent = function () {
         var _this = this;
         var contentReq = $.getJSON('../HttpHandler/DbHandler.php');
 
-        //console.log("content");
-        // console.log(contentReq);
+        //console.log(contentReq);
         contentReq.done(function (data) {
-            //console.log(data);
+            console.log(data);
             _this.contentObj = data;
+            console.log(_this.contentObj);
             $(document).trigger('contentLoaded');
+        });
+    };
+
+    ContentLoader.prototype.getCpTemplates = function (cpName) {
+        //todo: check if template is loaded before sending request
+        var _this = this;
+        var tmplReq = $.getJSON('../HttpHandler/templateHandler.php', { mdOrCp: "Contentpart", template: cpName });
+
+        //console.log(tmplReq);
+        tmplReq.done(function (data) {
+            // console.log(data);
+            _this.cpTemplateDict.setValue(cpName, data);
+
+            $(document).trigger('cpTemplatesLoaded');
         });
     };
 
     ContentLoader.prototype.renderContent = function (tmpl, obj) {
         //console.log(obj);
-        var jq = $.tmpl(tmpl, obj);
-        jq.appendTo($('main'));
+        //console.log(tmpl);
+        //console.log(obj.content);
+        if (obj.contentpart == false) {
+            var jq = $.tmpl(tmpl, obj.content);
+            jq.appendTo($('main'));
+        }
+
+        if (obj.contentpart == true) {
+            var x = this.getCpTemplates("image");
+            console.log(x);
+        }
     };
     return ContentLoader;
 })();

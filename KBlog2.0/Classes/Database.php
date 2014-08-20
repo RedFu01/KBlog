@@ -108,16 +108,18 @@
 
 		public function getModules( $pid, $ownerId ) {
 
-			$request = mysql_query( "SELECT data FROM modules WHERE pageId='".$pid."' AND ownerId = '".$ownerId."'" );
+			$request = mysql_query( "SELECT templateId, data FROM modules WHERE pageId='".$pid."' AND ownerId = '".$ownerId."'" );
 
-			//$module = mysql_fetch_array( $request, MYSQL_ASSOC );
+			//return mysql_fetch_array( $request, MYSQL_ASSOC );
 			$i=0;
 			$moduleList = null;
 			while($module = mysql_fetch_array( $request, MYSQL_ASSOC )){
-				$moduleList[$i]= $module["data"];
+				$moduleList[$i]= json_decode($module["data"]);
 				$i++;
 			}
-
+			echo "<pre>";
+			print_r($moduleList);
+			echo "</pre>";
 			return($moduleList);
 		}
 

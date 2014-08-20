@@ -12,7 +12,8 @@
 
 	//$page = $handler->getPage(1);
 	$modules = $handler->getModules(1, 1);
-	echo "<pre>";
 	print_r($modules);
+	echo "<pre>";
+	print_r(json_encode($modules));
 	echo "</pre>";
 ?>

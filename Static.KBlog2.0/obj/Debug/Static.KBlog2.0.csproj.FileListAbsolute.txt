@@ -1,6 +1,0 @@
-C:\Users\Kwame\Documents\GitHub\KBlog\Static.KBlog2.0\obj\Debug\Static.KBlog2.0.csprojResolveAssemblyReference.cache
-C:\Users\Kwame\Documents\GitHub\KBlog\Static.KBlog2.0\bin\Static.KBlog2.0.dll.config
-C:\Users\Kwame\Documents\GitHub\KBlog\Static.KBlog2.0\bin\Static.KBlog2.0.dll
-C:\Users\Kwame\Documents\GitHub\KBlog\Static.KBlog2.0\bin\Static.KBlog2.0.pdb
-C:\Users\Kwame\Documents\GitHub\KBlog\Static.KBlog2.0\obj\Debug\Static.KBlog2.0.dll
-C:\Users\Kwame\Documents\GitHub\KBlog\Static.KBlog2.0\obj\Debug\Static.KBlog2.0.pdb

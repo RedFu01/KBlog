@@ -7,9 +7,10 @@
 
 	header("Content-type: application/json");
 
-	// $pageId = $_GET["pageId"];
+	//$pageId = $_GET["pageId"];
 	//$cpList = $_GET["cpList"];
 	//$moduleList = $_GET["moduleList"];
+	$pageId = 1;
 	$moduleList = array("headlin");
 	$cpList = array("headline");
 	/*
@@ -24,17 +25,19 @@
 	*	Load page
 	*/
 
-	$page = $db->getPageModules(1,1);
+	$page = $db->getPageModules($pageId);
 
 	/*
 	* 	Compare and load module templates
 	*/
+	//print_r($page);
 
 	$newMdTmplArr = array();
 	$newCpTmplArr = array();
 	$newDataArr= array();
+	$modules = null;
 
-	$modules = $db->getModules(1,1);
+	$modules = $db->getModules($page[0], 1);
 
 	foreach ( $modules as $key => $module ) {
 		if( $module[0] == 0 ) {
@@ -72,14 +75,13 @@
 			}
 		}
 	}
-	$pageArr["mdTmpl"] = $newMdTmplArr;
-	$pageArr["cpTmpl"] = $newCpTmplArr;
+
+	$newCpTmplArr2[0]="0";
+	$newCpTmplArr2[1]=array("1");
+
+	$pageArr["mdTmpl"] = array($newMdTmplArr);
+	$pageArr["cpTmpl"] = array($newCpTmplArr);
 	$pageArr["data"] = $newDataArr;
 
-	print_r($newMdTmplArr);	
-	print_r($newCpTmplArr);
-
-	print_r(json_encode($pageArr));
-
-	// todo send contentpart template module template and content data to frontend
-?>
+	echo json_encode($pageArr);
+	// todo save templates in front end and render data

@@ -94,31 +94,30 @@ class Database {
 
 		$request = mysql_query( "SELECT modules FROM pages WHERE id='".$pid."'" );
 		$page = mysql_fetch_array( $request, MYSQL_ASSOC );
-		return(json_decode($page["modules"]));
+		return(json_decode($page["modules"], true));
 	}
 
 	/**
 	* function returns all modules and content of a Page.
 	*
-	* @param uid id of content owner can also be a page id
-	* @param numPost numer of posts to be returned
+	* @param ownerId id of content owner can also be a page id
+	* @param id array of id's contained on one page
 	* @return blogpostArr - 3 dimensional Array:
 	*		moduleList[$i][0]first colum contains boolean (0 = false, 1 = true) this boolean shows that modules contains contentparts witch have to be loaded, 
 	*		second column contains name of module template, 
 	*		third column contains content data (including contentparts).
 	*/
 
-	public function getModules( $pid, $ownerId ) {
-
-		$request = mysql_query( "SELECT templateId, data, contentpart FROM modules WHERE pageId='".$pid."' AND ownerId = '".$ownerId."'" );
-
-		$i=0;
+	public function getModules( $id, $ownerId ) {
 		$moduleList = null;
-		while($module = mysql_fetch_array( $request, MYSQL_ASSOC )){
-			$moduleList[$i][0] = $module["contentpart"];
-			$moduleList[$i][1] = $module["templateId"];
-			$moduleList[$i][2]= json_decode($module["data"], true);
-			$i++;
+		for ($i=0; $i<sizeof($id); $i++) {
+			$request = mysql_query( "SELECT template, data, contentpart FROM modules WHERE id='".$id[$i]."' AND ownerId = '".$ownerId."'" );
+
+			while($module = mysql_fetch_array( $request, MYSQL_ASSOC )){
+				$moduleList[$i][0] = $module["contentpart"];
+				$moduleList[$i][1] = $module["template"];
+				$moduleList[$i][2]= json_decode($module["data"], true);
+			}
 		}
 		return($moduleList);
 	}

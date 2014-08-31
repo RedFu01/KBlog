@@ -118,22 +118,21 @@
       <DependentUpon>all.js.bundle</DependentUpon>
     </Content>
     <Content Include="resrc\ts\pages.js" />
-    <Content Include="Scripts\collections.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="resrc\libs\functions.lib.ts" />
     <TypeScriptCompile Include="resrc\ts\contentLoader.ts" />
     <TypeScriptCompile Include="resrc\ts\d.ts\basic.d.ts" />
     <TypeScriptCompile Include="resrc\ts\d.ts\dropzone.d.ts" />
     <TypeScriptCompile Include="resrc\ts\d.ts\jquery.d.ts" />
     <TypeScriptCompile Include="resrc\ts\d.ts\jquery.tmpl.d.ts" />
-    <TypeScriptCompile Include="resrc\ts\heroTeaser.ts" />
     <TypeScriptCompile Include="resrc\ts\KBlog.ts" />
     <TypeScriptCompile Include="resrc\ts\main.ts" />
     <TypeScriptCompile Include="resrc\ts\PageLoader.ts" />
     <TypeScriptCompile Include="resrc\ts\pages.ts" />
-    <TypeScriptCompile Include="resrc\ts\templateRenderer.ts" />
-    <TypeScriptCompile Include="Scripts\collections.ts" />
+    <TypeScriptCompile Include="resrc\ts\TemplateRenderer.ts" />
+    <TypeScriptCompile Include="resrc\ts\enderer.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="resrc\fonts\fontawesome-webfont.eot" />
@@ -151,7 +150,6 @@
     <Content Include="resrc\less\contentPart.less" />
     <Content Include="resrc\less\all.less" />
     <Content Include="resrc\less\main.less" />
-    <Content Include="Scripts\collections.js.map" />
     <Content Include="packages.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>

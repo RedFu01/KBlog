@@ -1,7 +1,7 @@
 <?php
 	include "../Classes/Template.php";
-	$template = $_GET["template"];
-	$mdOrCp = $_GET["mdOrCp"];
+	$cpList = $_GET["cpList"];
+	$moduleList = $_GET["moduleList"];
 
 	$tmpl = new Template();
 

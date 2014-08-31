@@ -13,5 +13,11 @@
   <!--The order of the <file> elements determines the order of the images in the bundle.-->
   <files>
     <file>/resrc/libs/jquery.js</file>
+    <file>/resrc/libs/functions.lib.js</file>
+    <file>/resrc/libs/jquery.tmpl.js</file>
+
+    <file>/resrc/ts/TemplateRenderer.js</file>
+    <file>/resrc/ts/PageLoader.js</file>
+    <file>/resrc/ts/KBlog.js</file>
   </files>
 </bundle>

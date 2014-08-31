@@ -2,12 +2,7 @@
 <html data-pageId="1">
 <head>
     <title>hallo</title>
-    <script src="resrc/libs/jquery.js"></script>
-    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
-    <script src="resrc/ts/pages.js"></script>
-    <script src="Scripts/collections.js"></script>
-    <script src="resrc/ts/main.js"></script>
-    <script src="resrc/ts/contentLoader.js"></script>
+    <script src="resrc/ts/all.js"></script>
 </head>
 <body>
     <main></main>
@@ -16,6 +11,10 @@
     <!--<img src="Media/image-1.jpg" alt="anni"/>-->
     <ul></ul>
 
-
+    <script>
+        var moduleList = ["headline"];
+        var tmplReq = $.getJSON('../HttpHandler/pageLoadHandler.php', {moduleList: moduleList});
+        console.log(tmplReq);
+    </script>
 </body>
 </html>

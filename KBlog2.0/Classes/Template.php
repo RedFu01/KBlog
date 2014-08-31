@@ -1,18 +1,27 @@
 <?php
 		class Template {
-		/* param location template location either "Module" or "Contentpart"
-		*  param tmplName name of the requestet template
-		*
+		/** 	
+		*	@param tmplName name of the requestet template
+		*	@return {string} returns template string
 		*/
-		public function getTemplate($location, $moduleArray) {
-			$tmplArray = null;
-			$i=0;
-			foreach ($moduleArray as $tmplName) {
-				$file = "../".$location." Templates/".$tmplName.".html";
-				$tmplArray[$i] = file_get_contents($file);
-				$i++;
+		public function getModuleTemplate($tmplName) {
+			$file = "../Module Templates/".$tmplName.".html";
+			if (file_exists($file)) {
+				return file_get_contents($file);
 			}
-			return $tmplArray;
+			return null;
+		}
+
+		/** 	
+		*	@param tmplName name of the requestet template
+		*	@return {string} returns template string
+		*/
+		public function getCpTemplate($tmplName) {
+			$file = "../Contentpart Templates/".$tmplName.".html";
+			if (file_exists($file)) {
+				return file_get_contents($file);
+			}
+			return null;
 		}
 	}
 ?>

@@ -1,5 +1,4 @@
 ﻿/// <reference path="d.ts/jquery.d.ts" />
-/// <reference path="heroTeaser.ts" />
 /// <reference path="../../Scripts/collections.ts" />
 
 class PageLoader {

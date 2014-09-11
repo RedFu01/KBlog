@@ -2,7 +2,13 @@
 <html data-pageId="1">
 <head>
     <title>hallo</title>
-    <script src="resrc/ts/all.js"></script>
+    <!--<script src="resrc/ts/all.js"></script>-->
+    <script src="resrc/libs/jquery.js"></script>
+    <script src="resrc/libs/jquery.tmpl.js"></script>
+    <script src="resrc/libs/functions.lib.js"></script>
+    <script src="resrc/ts/KBlog.js"></script>
+    <script src="resrc/ts/PageLoader.js"></script>
+    <script src="resrc/ts/TemplateRenderer.js"></script>
 </head>
 <body>
     <main></main>
@@ -10,11 +16,5 @@
     <a href="../HttpHandler/templateHandler.php?template=headline&mdOrCp=Module">Template</a>
     <!--<img src="Media/image-1.jpg" alt="anni"/>-->
     <ul></ul>
-
-    <script>
-        var moduleList = ["headline"];
-        var tmplReq = $.getJSON('../HttpHandler/pageLoadHandler.php', {moduleList: moduleList});
-        console.log(tmplReq);
-    </script>
 </body>
 </html>

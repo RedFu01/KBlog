@@ -1,4 +1,5 @@
 ﻿///<reference path="PageLoader.ts" />
+///<reference path="TemplateRenderer.ts" />
 ///<reference path="../libs/functions.lib.ts" />
 
 interface Window { page: KBlog.Page; }
@@ -12,6 +13,7 @@ module KBlog {
         constructor() {
             /* initialisation */
             this.loader = new PageLoader();
+            this.renderer = new Renderer();
             this.moduleTmplDict = new FunctionLib.Dictionary<string, string>();
             this.cpTmplDict = new FunctionLib.Dictionary<string, string>();
 
@@ -24,7 +26,7 @@ module KBlog {
         *   @this {KBlog.Page}
         *   @return {Array} array of strings with template names.
         */
-        getModuleTemplates() {
+        getModuleTemplateKey() {
             return this.moduleTmplDict.keys();
         }
 
@@ -34,8 +36,28 @@ module KBlog {
         *   @this {KBlog.Page}
         *   @return {Array} array of strings with template names
         */
-        getCpTemplates() {
+        getCpTemplateKey() {
             return this.cpTmplDict.keys();
+        }
+
+                /**
+        *   This function returns all contentpart templates loaded on current page.
+        * 
+        *   @this {KBlog.Page}
+        *   @return {Array} array of strings with template names
+        */
+        getModuleTemplate(key: string) {
+            return this.moduleTmplDict.getValue(key);
+        }
+
+        /**
+        *   This function returns all contentpart templates loaded on current page.
+        * 
+        *   @this {KBlog.Page}
+        *   @return {Array} array of strings with template names
+        */
+        getCpTemplate(key: string) {
+            return this.cpTmplDict.getValue(key);
         }
 
         /**
@@ -47,7 +69,7 @@ module KBlog {
         *   param value {String} template
         * 
         */
-        setModuleTemplateNames(key: string, val: string) {
+        setModuleTemplate(key: string, val: string) {
             this.moduleTmplDict.setValue(key, val);
         }
 
@@ -59,7 +81,7 @@ module KBlog {
         *   param key {String} template name
         *   param value {String} template
         */
-        setCpTemplateNames(key: string, val: string) {
+        setCpTemplate(key: string, val: string) {
             this.cpTmplDict.setValue(key, val);
         }
     }

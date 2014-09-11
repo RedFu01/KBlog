@@ -1,4 +1,5 @@
 ﻿///<reference path="PageLoader.ts" />
+///<reference path="TemplateRenderer.ts" />
 ///<reference path="../libs/functions.lib.ts" />
 var KBlog;
 (function (KBlog) {
@@ -6,6 +7,7 @@ var KBlog;
         function Page() {
             /* initialisation */
             this.loader = new KBlog.PageLoader();
+            this.renderer = new KBlog.Renderer();
             this.moduleTmplDict = new FunctionLib.Dictionary();
             this.cpTmplDict = new FunctionLib.Dictionary();
 
@@ -17,7 +19,7 @@ var KBlog;
         *   @this {KBlog.Page}
         *   @return {Array} array of strings with template names.
         */
-        Page.prototype.getModuleTemplates = function () {
+        Page.prototype.getModuleTemplateKey = function () {
             return this.moduleTmplDict.keys();
         };
 
@@ -27,8 +29,28 @@ var KBlog;
         *   @this {KBlog.Page}
         *   @return {Array} array of strings with template names
         */
-        Page.prototype.getCpTemplates = function () {
+        Page.prototype.getCpTemplateKey = function () {
             return this.cpTmplDict.keys();
+        };
+
+        /**
+        *   This function returns all contentpart templates loaded on current page.
+        *
+        *   @this {KBlog.Page}
+        *   @return {Array} array of strings with template names
+        */
+        Page.prototype.getModuleTemplate = function (key) {
+            return this.moduleTmplDict.getValue(key);
+        };
+
+        /**
+        *   This function returns all contentpart templates loaded on current page.
+        *
+        *   @this {KBlog.Page}
+        *   @return {Array} array of strings with template names
+        */
+        Page.prototype.getCpTemplate = function (key) {
+            return this.cpTmplDict.getValue(key);
         };
 
         /**
@@ -40,7 +62,7 @@ var KBlog;
         *   param value {String} template
         *
         */
-        Page.prototype.setModuleTemplateNames = function (key, val) {
+        Page.prototype.setModuleTemplate = function (key, val) {
             this.moduleTmplDict.setValue(key, val);
         };
 
@@ -52,7 +74,7 @@ var KBlog;
         *   param key {String} template name
         *   param value {String} template
         */
-        Page.prototype.setCpTemplateNames = function (key, val) {
+        Page.prototype.setCpTemplate = function (key, val) {
             this.cpTmplDict.setValue(key, val);
         };
         return Page;

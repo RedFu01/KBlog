@@ -12,9 +12,9 @@ var FunctionLib;
     function defaultToString(item) {
         if (item === null) {
             return 'COLLECTION_NULL';
-        } else if (collections.isUndefined(item)) {
+        } else if (FunctionLib.isUndefined(item)) {
             return 'COLLECTION_UNDEFINED';
-        } else if (collections.isString(item)) {
+        } else if (FunctionLib.isString(item)) {
             return item;
         } else {
             return item.toString();
@@ -29,9 +29,9 @@ var FunctionLib;
         if (typeof join === "undefined") { join = ","; }
         if (item === null) {
             return 'COLLECTION_NULL';
-        } else if (collections.isUndefined(item)) {
+        } else if (FunctionLib.isUndefined(item)) {
             return 'COLLECTION_UNDEFINED';
-        } else if (collections.isString(item)) {
+        } else if (FunctionLib.isString(item)) {
             return item.toString();
         } else {
             var toret = "{";

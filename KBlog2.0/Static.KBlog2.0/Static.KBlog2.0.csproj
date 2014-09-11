@@ -60,15 +60,9 @@
     <Content Include="resrc\less\module.min.css">
       <DependentUpon>module.css</DependentUpon>
     </Content>
-    <Content Include="resrc\libs\annotate.css" />
-    <Content Include="resrc\libs\BackendJS.js" />
-    <Content Include="resrc\libs\dropzone.js" />
-    <Content Include="resrc\libs\font-awesome.min.css" />
     <Content Include="resrc\libs\fontawesome\css\font-awesome-ie7.css" />
     <Content Include="resrc\libs\fontawesome\css\font-awesome.css" />
     <Content Include="resrc\libs\fontawesome\font\fontawesome-webfont.svg" />
-    <Content Include="resrc\libs\hallo.css" />
-    <Content Include="resrc\libs\hallo.js" />
     <Content Include="resrc\libs\images\animated-overlay.gif" />
     <Content Include="resrc\libs\images\arrow.png" />
     <Content Include="resrc\libs\images\divider.png" />
@@ -112,7 +106,6 @@
     <Content Include="resrc\libs\jquery.htmlClean.js" />
     <Content Include="resrc\libs\jquery.js" />
     <Content Include="resrc\libs\jquery.tmpl.js" />
-    <Content Include="resrc\libs\rangy-core.js" />
     <Content Include="resrc\templates\heroTeaser.html" />
     <Content Include="resrc\ts\all.js">
       <DependentUpon>all.js.bundle</DependentUpon>
@@ -139,7 +132,6 @@
     <Content Include="resrc\fonts\fontawesome-webfont.ttf" />
     <Content Include="resrc\fonts\fontawesome-webfont.woff" />
     <Content Include="resrc\fonts\FontAwesome.otf" />
-    <Content Include="resrc\libs\BackendJS.js.bundle" />
     <Content Include="resrc\libs\fontawesome\font\fontawesome-webfont.eot" />
     <Content Include="resrc\libs\fontawesome\font\fontawesome-webfont.svgz" />
     <Content Include="resrc\libs\fontawesome\font\fontawesome-webfont.ttf" />

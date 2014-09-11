@@ -26,9 +26,9 @@ var FunctionLib;
     function defaultToString(item) {
         if (item === null) {
             return 'COLLECTION_NULL';
-        } else if (collections.isUndefined(item)) {
+        } else if (FunctionLib.isUndefined(item)) {
             return 'COLLECTION_UNDEFINED';
-        } else if (collections.isString(item)) {
+        } else if (FunctionLib.isString(item)) {
             return item;
         } else {
             return item.toString();
@@ -43,9 +43,9 @@ var FunctionLib;
         if (typeof join === "undefined") { join = ","; }
         if (item === null) {
             return 'COLLECTION_NULL';
-        } else if (collections.isUndefined(item)) {
+        } else if (FunctionLib.isUndefined(item)) {
             return 'COLLECTION_UNDEFINED';
-        } else if (collections.isString(item)) {
+        } else if (FunctionLib.isString(item)) {
             return item.toString();
         } else {
             var toret = "{";
@@ -765,13 +765,24 @@ var FunctionLib;
 	}
 })( jQuery );
 ///#source 1 1 /resrc/ts/TemplateRenderer.js
+/// <reference path="d.ts/jquery.tmpl.d.ts" />
 var KBlog;
 (function (KBlog) {
     var Renderer = (function () {
         function Renderer() {
         }
         Renderer.prototype.renderPage = function () {
-            var list = window.page.getModuleTemplates();
+            //var list = window.page.getModuleTemplates();
+        };
+
+        Renderer.prototype.renderModule = function (mod, obj) {
+            var jq = $.tmpl(mod, obj);
+            jq.appendTo($('main'));
+        };
+
+        Renderer.prototype.renderTemplate = function (tmpl, obj) {
+            var jq = $.tmpl(tmpl, obj);
+            jq.appendTo($('main'));
         };
         return Renderer;
     })();
@@ -786,14 +797,39 @@ var KBlog;
         function PageLoader() {
         }
         PageLoader.prototype.getPage = function (page) {
-            var moduleList = page.getModuleTemplates();
-            var cpList = page.getCpTemplates();
+            var moduleList = page.getModuleTemplateKey();
+            var cpList = page.getCpTemplateKey();
 
             var id = 1;
             moduleList = ["headline"]; // Todo: delete
             var tmplReq = $.getJSON('../HttpHandler/pageLoadHandler.php', { pageId: id, moduleList: moduleList, cpList: cpList });
+
+            /**
+            *  data[0] :   mdTmpl
+            *  data[1] :   cpTmpl
+            *  data[2] :   data
+            */
             tmplReq.done(function (data) {
                 console.log(data);
+                var p = data["page"];
+                var c = data["cp"];
+                var modules = data["mdTmpl"];
+                var cp = data["cpTmpl"];
+                var da = data["data"];
+
+                for (var i = 0; i < c.length - 1; i++) {
+                    page.setCpTemplate(c[i], cp[c[i]]);
+                    console.log(page.getCpTemplate(c[i]));
+                }
+
+                for (var i = 0; i < p.length - 1; i++) {
+                    page.setModuleTemplate(p[i], modules[p[i]]);
+                    console.log(da[i]);
+                    page.renderer.renderModule(page.getModuleTemplate(p[i]), da[i]);
+                    //TODO: render contentparts
+                }
+
+                console.log();
                 //page.setModuleTemplateNames();
             });
         };
@@ -805,6 +841,7 @@ var KBlog;
 
 ///#source 1 1 /resrc/ts/KBlog.js
 ///<reference path="PageLoader.ts" />
+///<reference path="TemplateRenderer.ts" />
 ///<reference path="../libs/functions.lib.ts" />
 var KBlog;
 (function (KBlog) {
@@ -812,6 +849,7 @@ var KBlog;
         function Page() {
             /* initialisation */
             this.loader = new KBlog.PageLoader();
+            this.renderer = new KBlog.Renderer();
             this.moduleTmplDict = new FunctionLib.Dictionary();
             this.cpTmplDict = new FunctionLib.Dictionary();
 
@@ -823,7 +861,7 @@ var KBlog;
         *   @this {KBlog.Page}
         *   @return {Array} array of strings with template names.
         */
-        Page.prototype.getModuleTemplates = function () {
+        Page.prototype.getModuleTemplateKey = function () {
             return this.moduleTmplDict.keys();
         };
 
@@ -833,8 +871,28 @@ var KBlog;
         *   @this {KBlog.Page}
         *   @return {Array} array of strings with template names
         */
-        Page.prototype.getCpTemplates = function () {
+        Page.prototype.getCpTemplateKey = function () {
             return this.cpTmplDict.keys();
+        };
+
+        /**
+        *   This function returns all contentpart templates loaded on current page.
+        *
+        *   @this {KBlog.Page}
+        *   @return {Array} array of strings with template names
+        */
+        Page.prototype.getModuleTemplate = function (key) {
+            return this.moduleTmplDict.getValue(key);
+        };
+
+        /**
+        *   This function returns all contentpart templates loaded on current page.
+        *
+        *   @this {KBlog.Page}
+        *   @return {Array} array of strings with template names
+        */
+        Page.prototype.getCpTemplate = function (key) {
+            return this.cpTmplDict.getValue(key);
         };
 
         /**
@@ -846,7 +904,7 @@ var KBlog;
         *   param value {String} template
         *
         */
-        Page.prototype.setModuleTemplateNames = function (key, val) {
+        Page.prototype.setModuleTemplate = function (key, val) {
             this.moduleTmplDict.setValue(key, val);
         };
 
@@ -858,7 +916,7 @@ var KBlog;
         *   param key {String} template name
         *   param value {String} template
         */
-        Page.prototype.setCpTemplateNames = function (key, val) {
+        Page.prototype.setCpTemplate = function (key, val) {
             this.cpTmplDict.setValue(key, val);
         };
         return Page;

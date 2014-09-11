@@ -10,9 +10,10 @@ var ContentLoader = (function () {
         var _this = this;
         var contentReq = $.getJSON('../HttpHandler/DbHandler.php');
         contentReq.done(function (data) {
-            console.log(data);
+            //console.log(data);
             _this.contentObj = data;
-            console.log(_this.contentObj);
+
+            //console.log(this.contentObj);
             $(document).trigger('contentLoaded');
         });
     };
@@ -37,7 +38,7 @@ var ContentLoader = (function () {
 
         if (obj.contentpart == true) {
             var x = this.getCpTemplates("image");
-            console.log(x);
+            //console.log(x);
         }
     };
     return ContentLoader;

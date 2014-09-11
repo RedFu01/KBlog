@@ -13,9 +13,9 @@ module FunctionLib {
     export function defaultToString(item): string {
         if (item === null) {
             return 'COLLECTION_NULL';
-        } else if (collections.isUndefined(item)) {
+        } else if (FunctionLib.isUndefined(item)) {
             return 'COLLECTION_UNDEFINED';
-        } else if (collections.isString(item)) {
+        } else if (FunctionLib.isString(item)) {
             return item;
         } else {
             return item.toString();
@@ -28,9 +28,9 @@ module FunctionLib {
     export function toString<T>(item: T, join: string = ","): string {
         if (item === null) {
             return 'COLLECTION_NULL';
-        } else if (collections.isUndefined(item)) {
+        } else if (FunctionLib.isUndefined(item)) {
             return 'COLLECTION_UNDEFINED';
-        } else if (collections.isString(item)) {
+        } else if (FunctionLib.isString(item)) {
             return item.toString();
         } else {
             var toret = "{";

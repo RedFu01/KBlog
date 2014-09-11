@@ -10,9 +10,9 @@ class ContentLoader {
     getContent() {
         var contentReq = $.getJSON('../HttpHandler/DbHandler.php');
         contentReq.done((data) => {
-            console.log(data);
+            //console.log(data);
             this.contentObj = data;
-            console.log(this.contentObj);
+            //console.log(this.contentObj);
             $(document).trigger('contentLoaded');
         });
     }
@@ -38,7 +38,7 @@ class ContentLoader {
 
         if (obj.contentpart == true) {
             var x = this.getCpTemplates("image");
-            console.log(x);
+            //console.log(x);
         }
 
     }

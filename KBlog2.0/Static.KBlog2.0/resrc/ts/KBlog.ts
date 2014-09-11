@@ -2,6 +2,28 @@
 ///<reference path="TemplateRenderer.ts" />
 ///<reference path="../libs/functions.lib.ts" />
 
+/*CR:
+Allgemein:
+- Warum gibt es ContentLoader und pageLoader?
+- was ist die pages.ts, noch ein Pageloader?
+- enderer.ts = Renderer.ts (TypescriptDateien, die Klassen enthalten Schreibt man groß)
+- Die Steuerung sollte in der KBlog.ts stattfinden, nicht in der main.ts
+- Wir müssen mal aufräumen, alle unnützen scripts und plugins raus
+- Das Collectionsplugin in den libs ordner
+
+TemplateRenderer.ts :
+- ich würde den renderer ein JQuery zurück geben lassen und es nicht direkt an main anhängen, ist generischer
+  und dann funktioniert er auch für cps
+- dann vllt eine neue methode die gerenderten content generisch an ein element hängen kann, welches du als übergabeparamter angibst
+- (enderer.ts löschen)
+
+PageLoader.ts
+- Der PageLoader hat zu viel Steuerung, er sollte nichts tun außer daten laden, das ganze zusammensetzten sollte in der page geschehen
+- variablennamen sollten aussagekräftiger sein
+- typen angeben für die variablen (kein Muss aber hilfreich zum entwickeln)
+- den handler als klassenvariable im Constructor ablegen
+*/
+
 interface Window { page: KBlog.Page; }
 module KBlog {
     export class Page {
@@ -40,12 +62,12 @@ module KBlog {
             return this.cpTmplDict.keys();
         }
 
-                /**
-        *   This function returns all contentpart templates loaded on current page.
-        * 
-        *   @this {KBlog.Page}
-        *   @return {Array} array of strings with template names
-        */
+        /**
+*   This function returns all contentpart templates loaded on current page.
+* 
+*   @this {KBlog.Page}
+*   @return {Array} array of strings with template names
+*/
         getModuleTemplate(key: string) {
             return this.moduleTmplDict.getValue(key);
         }

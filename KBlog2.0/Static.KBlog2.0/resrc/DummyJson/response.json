@@ -1,0 +1,35 @@
+﻿{
+"contentPartTemplates" : [
+    {
+    "templateName" : "blogpost",
+    "template : "<section class="blogpost" id="${id}"> <h2 class="title">${title}</h2> <span class="date">${date}</span> <div class="contentparts"> </div> </section>"	
+    }
+],
+"moduleTemplates" :[
+    {
+    "templateName": "text",
+    "template":"<div class="text"> <p data-field="text" >${text}</p> </div>" 
+    },
+    {
+    "templateName":"singleImage",
+    "template":"<figure class="single-image"> <img data-field="src" src="${src}"/> </figure>"
+    }
+],
+"modules" :[
+    {
+	"templateName":"blogpost",
+    "title":"first post",
+    "date":"13.1.1994",
+    "contentParts":[
+        {
+        "templateName":"text",
+        "text":"<span>THIS IS A TEXT CP</span> In A SPAN"
+        },
+        {
+        "templateName":"singleImage",
+        "src":"/resrc/Media/dummy.png"
+        }
+    ]
+    }
+]	
+}

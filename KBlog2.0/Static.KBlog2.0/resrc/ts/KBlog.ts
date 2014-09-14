@@ -29,18 +29,19 @@ module KBlog {
     export class Page {
         moduleTmplDict: FunctionLib.Dictionary<string, string>;
         cpTmplDict: FunctionLib.Dictionary<string, string>;
+        modules: { templateName: string; contentParts: { templateName: string }[] }[];
         loader: KBlog.PageLoader;
         renderer: KBlog.Renderer;
 
         constructor() {
             /* initialisation */
-            this.loader = new PageLoader();
-            this.renderer = new Renderer();
+            this.loader = new PageLoader(this, "");
+            this.renderer = new Renderer(this);
             this.moduleTmplDict = new FunctionLib.Dictionary<string, string>();
             this.cpTmplDict = new FunctionLib.Dictionary<string, string>();
 
             /*page action*/
-            this.loader.getPage(this);
+            this.loader.getPage();
         }
 
         /**

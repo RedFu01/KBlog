@@ -1,44 +1,42 @@
-﻿var KBlog;
+﻿/// <reference path="d.ts/jquery.d.ts" />
+var KBlog;
 (function (KBlog) {
     var PageLoader = (function () {
-        function PageLoader() {
+        function PageLoader(page, handler) {
+            this.page = page;
+            this.pageHandler = handler;
         }
-        PageLoader.prototype.getPage = function (page) {
-            var moduleList = page.getModuleTemplateKey();
-            var cpList = page.getCpTemplateKey();
-
-            var id = 1;
-            moduleList = ["headline"]; // Todo: delete
-            var tmplReq = $.getJSON('../HttpHandler/pageLoadHandler.php', { pageId: id, moduleList: moduleList, cpList: cpList });
-
-            /**
-            *  data[0] :   mdTmpl
-            *  data[1] :   cpTmpl
-            *  data[2] :   data
-            */
-            tmplReq.done(function (data) {
-                console.log(data);
-                var p = data["page"];
-                var c = data["cp"];
-                var modules = data["mdTmpl"];
-                var cp = data["cpTmpl"];
-                var da = data["data"];
-
-                for (var i = 0; i < c.length - 1; i++) {
-                    page.setCpTemplate(c[i], cp[c[i]]);
-                    console.log(page.getCpTemplate(c[i]));
-                }
-
-                for (var i = 0; i < p.length - 1; i++) {
-                    page.setModuleTemplate(p[i], modules[p[i]]);
-                    console.log(da[i]);
-                    page.renderer.renderModule(page.getModuleTemplate(p[i]), da[i]);
-                    //TODO: render contentparts
-                }
-
-                console.log();
-                //page.setModuleTemplateNames();
+        PageLoader.prototype.getRequestData = function () {
+            var data = {};
+            return data;
+        };
+        PageLoader.prototype.getPage = function () {
+            var _this = this;
+            //TODO GET DATA
+            var request = $.ajax({
+                data: this.getRequestData(),
+                url: this.pageHandler
             });
+            request.done(function (data) {
+                return _this.ajaxSuccess(data);
+            });
+        };
+        PageLoader.prototype.ajaxSuccess = function (data) {
+            for (var i = 0; i < data.contentPartTemplates.length; i++) {
+                this.page.setCpTemplate(data.contentPartTemplates[i].templateName, data.contentPartTemplates[i].template);
+            }
+
+            for (var i = 0; i < data.moduleTemplates.length; i++) {
+                this.page.setModuleTemplate(data.moduleTemplates[i].templateName, data.moduleTemplates[i].template);
+            }
+
+            for (var i; i < data.modules.length; i++) {
+                this.page.modules.push(data.modules[i]);
+            }
+            this.page.renderer.renderModules(data.modules.length);
+        };
+        PageLoader.prototype.ajaxFail = function (data) {
+            //SHOW FAIL MESSAGE
         };
         return PageLoader;
     })();

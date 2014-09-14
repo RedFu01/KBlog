@@ -6,13 +6,13 @@ var KBlog;
     var Page = (function () {
         function Page() {
             /* initialisation */
-            this.loader = new KBlog.PageLoader();
-            this.renderer = new KBlog.Renderer();
+            this.loader = new KBlog.PageLoader(this, "");
+            this.renderer = new KBlog.Renderer(this);
             this.moduleTmplDict = new FunctionLib.Dictionary();
             this.cpTmplDict = new FunctionLib.Dictionary();
 
             /*page action*/
-            this.loader.getPage(this);
+            this.loader.getPage();
         }
         /**
         *   This function returns all module templates loaded on current page.

@@ -2,20 +2,27 @@
 var KBlog;
 (function (KBlog) {
     var Renderer = (function () {
-        function Renderer() {
+        function Renderer(page) {
+            this.page = page;
         }
-        Renderer.prototype.renderPage = function () {
-            //var list = window.page.getModuleTemplates();
-        };
+        Renderer.prototype.renderModules = function (moduleCount) {
+            for (var i = this.page.modules.length - moduleCount; i < this.page.modules.length; i++) {
+                var moduleObject = this.page.modules[i];
+                var moduleTemplate = this.page.getModuleTemplate(moduleObject.templateName);
+                var moduleMarkup = this.renderTemplate(moduleTemplate, moduleObject);
+                moduleMarkup.appendTo($('main'));
 
-        Renderer.prototype.renderModule = function (mod, obj) {
-            var jq = $.tmpl(mod, obj);
-            jq.appendTo($('main'));
+                for (var j = 0; j = moduleObject.contentParts.length; j++) {
+                    var contentPart = moduleObject.contentParts[j];
+                    var contentpartTemplate = this.page.getCpTemplate(contentPart.templateName);
+                    var contentpartMarkup = this.renderTemplate(contentpartTemplate, contentPart);
+                    contentpartMarkup.appendTo($('.contentparts', moduleMarkup));
+                }
+            }
         };
-
-        Renderer.prototype.renderTemplate = function (tmpl, obj) {
-            var jq = $.tmpl(tmpl, obj);
-            jq.appendTo($('main'));
+        Renderer.prototype.renderTemplate = function (template, object) {
+            var markup = $.tmpl(template, object);
+            return markup;
         };
         return Renderer;
     })();

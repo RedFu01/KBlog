@@ -5,11 +5,11 @@
 /*CR:
 Allgemein:
 - Warum gibt es ContentLoader und pageLoader?
-- was ist die pages.ts, noch ein Pageloader?
-- enderer.ts = Renderer.ts (TypescriptDateien, die Klassen enthalten Schreibt man groß)
-- Die Steuerung sollte in der KBlog.ts stattfinden, nicht in der main.ts
+- was ist die pages.ts, noch ein Pageloader? 
+- enderer.ts = Renderer.ts (TypescriptDateien, die Klassen enthalten Schreibt man groß) ----enderer.ts ist obsolet
+- Die Steuerung sollte in der KBlog.ts stattfinden, nicht in der main.ts ------main.ts ist obsolet
 - Wir müssen mal aufräumen, alle unnützen scripts und plugins raus
-- Das Collectionsplugin in den libs ordner
+- Das Collectionsplugin in den libs ordner ---- collections plugin ist functions.lib.js
 
 TemplateRenderer.ts :
 - ich würde den renderer ein JQuery zurück geben lassen und es nicht direkt an main anhängen, ist generischer

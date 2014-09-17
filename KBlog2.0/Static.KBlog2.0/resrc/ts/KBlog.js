@@ -5,8 +5,9 @@ var KBlog;
 (function (KBlog) {
     var Page = (function () {
         function Page() {
+            this.modules = [];
             /* initialisation */
-            this.loader = new KBlog.PageLoader(this, "");
+            this.loader = new KBlog.PageLoader(this, "/resrc/DummyJson/response.json");
             this.renderer = new KBlog.Renderer(this);
             this.moduleTmplDict = new FunctionLib.Dictionary();
             this.cpTmplDict = new FunctionLib.Dictionary();

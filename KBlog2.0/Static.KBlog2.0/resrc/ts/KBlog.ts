@@ -29,13 +29,13 @@ module KBlog {
     export class Page {
         moduleTmplDict: FunctionLib.Dictionary<string, string>;
         cpTmplDict: FunctionLib.Dictionary<string, string>;
-        modules: { templateName: string; contentParts: { templateName: string }[] }[];
+        modules: { templateName: string; contentParts: { templateName: string }[] }[] = [];
         loader: KBlog.PageLoader;
         renderer: KBlog.Renderer;
 
         constructor() {
             /* initialisation */
-            this.loader = new PageLoader(this, "");
+            this.loader = new PageLoader(this, "/resrc/DummyJson/response.json");
             this.renderer = new Renderer(this);
             this.moduleTmplDict = new FunctionLib.Dictionary<string, string>();
             this.cpTmplDict = new FunctionLib.Dictionary<string, string>();

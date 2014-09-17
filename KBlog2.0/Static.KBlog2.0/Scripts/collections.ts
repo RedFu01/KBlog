@@ -1498,7 +1498,7 @@ module collections {
          * @type collections.LinkedList
          * @private
          */
-        private list: LinkedList<T>;
+        private list: any
 
         /**
          * Creates an empty queue.
@@ -2401,7 +2401,7 @@ module collections {
         /**
         * @private
         */
-        private levelTraversalAux(node: BSTreeNode<T>, callback: ILoopFunction<T>) {
+        private levelTraversalAux(node: any, callback: ILoopFunction<T>) {
             var queue = new Queue();
             if (node !== null) {
                 queue.enqueue(node);

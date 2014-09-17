@@ -1,18 +1,18 @@
 ﻿{
-"contentPartTemplates" : [
+"moduleTemplates" : [
     {
     "templateName" : "blogpost",
-    "template : "<section class="blogpost" id="${id}"> <h2 class="title">${title}</h2> <span class="date">${date}</span> <div class="contentparts"> </div> </section>"	
+    "template" : "<section class=\"blogpost\" id=\"${id}\"> <h2 class=\"title\">${title}</h2> <span class=\"date\">${date}</span> <div class=\"contentparts\"> </div> </section>"	
     }
 ],
-"moduleTemplates" :[
+"contentPartTemplates" :[
     {
     "templateName": "text",
-    "template":"<div class="text"> <p data-field="text" >${text}</p> </div>" 
+    "template":"<div class=\"text\"> <p data-field=\"text\" >{{html text}}</p> </div>" 
     },
     {
     "templateName":"singleImage",
-    "template":"<figure class="single-image"> <img data-field="src" src="${src}"/> </figure>"
+    "template":"<figure class=\"single-image\"> <img data-field=\"src\" src=\"${src}\"/> </figure>"
     }
 ],
 "modules" :[

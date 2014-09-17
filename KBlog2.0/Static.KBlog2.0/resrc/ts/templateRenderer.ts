@@ -14,7 +14,7 @@ module KBlog {
                 moduleMarkup.appendTo($('main'));
 
                 //Go through all CPS
-                for (var j = 0; j = moduleObject.contentParts.length; j++) {
+                for (var j:number = 0; j < moduleObject.contentParts.length; j++) {
                     var contentPart: { templateName: string } = moduleObject.contentParts[j];
                     var contentpartTemplate: string = this.page.getCpTemplate(contentPart.templateName);
                     var contentpartMarkup: JQuery = this.renderTemplate(contentpartTemplate, contentPart);

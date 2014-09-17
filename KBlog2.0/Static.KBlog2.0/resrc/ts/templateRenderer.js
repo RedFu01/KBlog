@@ -12,7 +12,7 @@ var KBlog;
                 var moduleMarkup = this.renderTemplate(moduleTemplate, moduleObject);
                 moduleMarkup.appendTo($('main'));
 
-                for (var j = 0; j = moduleObject.contentParts.length; j++) {
+                for (var j = 0; j < moduleObject.contentParts.length; j++) {
                     var contentPart = moduleObject.contentParts[j];
                     var contentpartTemplate = this.page.getCpTemplate(contentPart.templateName);
                     var contentpartMarkup = this.renderTemplate(contentpartTemplate, contentPart);

@@ -30,7 +30,7 @@ var KBlog;
                 this.page.setModuleTemplate(data.moduleTemplates[i].templateName, data.moduleTemplates[i].template);
             }
 
-            for (var i; i < data.modules.length; i++) {
+            for (var i = 0; i < data.modules.length; i++) {
                 this.page.modules.push(data.modules[i]);
             }
             this.page.renderer.renderModules(data.modules.length);

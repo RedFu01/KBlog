@@ -35,6 +35,7 @@
     <Content Include="Media\nav-2.jpg" />
     <Content Include="Media\viv.jpg" />
     <Content Include="Media\vivi.jpg" />
+    <None Include="resrc\DummyJson\response.json" />
     <Content Include="resrc\fonts\fontawesome-webfont.svg" />
     <Content Include="resrc\img\edit-icon.png" />
     <Content Include="resrc\img\facebook-icon-hover.jpg" />
@@ -106,10 +107,17 @@
     <Content Include="resrc\libs\jquery.htmlClean.js" />
     <Content Include="resrc\libs\jquery.js" />
     <Content Include="resrc\libs\jquery.tmpl.js" />
+    <Content Include="resrc\templates\contentPartTemplates\doubleImage.js" />
+    <Content Include="resrc\templates\contentPartTemplates\fourImages.html" />
+    <Content Include="resrc\templates\contentPartTemplates\doubleImage.html" />
+    <Content Include="resrc\templates\contentPartTemplates\fourImages.js" />
+    <Content Include="resrc\templates\contentPartTemplates\singleImage.html" />
+    <Content Include="resrc\templates\contentPartTemplates\singleImage.js" />
+    <Content Include="resrc\templates\contentPartTemplates\text.html" />
+    <Content Include="resrc\templates\contentPartTemplates\text.js" />
     <Content Include="resrc\templates\heroTeaser.html" />
-    <Content Include="resrc\ts\all.js">
-      <DependentUpon>all.js.bundle</DependentUpon>
-    </Content>
+    <Content Include="resrc\templates\moduleTemplates\blogpost.html" />
+    <Content Include="resrc\templates\moduleTemplates\blogpost.js" />
     <Content Include="resrc\ts\pages.js" />
     <Content Include="web.config" />
   </ItemGroup>

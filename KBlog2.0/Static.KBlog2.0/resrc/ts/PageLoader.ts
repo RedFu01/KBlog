@@ -19,7 +19,7 @@ module KBlog {
             })
             request.done((data) => this.ajaxSuccess(data));
         }
-        ajaxSuccess(data: { contentPartTemplates: { templateName: string; template: string }[]; moduleTemplates: { templateName: string; template: string }[]; modules: {}[] }) {
+        ajaxSuccess(data: { contentPartTemplates: { templateName: string; template: string }[]; moduleTemplates: { templateName: string; template: string }[]; modules: { templateName: string; contentParts: { templateName: string }[] }[] }) {
             //ADD CP TEMPLATES
             for (var i: number = 0; i < data.contentPartTemplates.length; i++) {
                 this.page.setCpTemplate(data.contentPartTemplates[i].templateName, data.contentPartTemplates[i].template);
@@ -29,7 +29,7 @@ module KBlog {
                 this.page.setModuleTemplate(data.moduleTemplates[i].templateName, data.moduleTemplates[i].template);
             }
             //STORE MODULES
-            for (var i: number; i < data.modules.length; i++) {
+            for (var i: number = 0; i < data.modules.length; i++) {
                 this.page.modules.push(data.modules[i]);
             }
             this.page.renderer.renderModules(data.modules.length);
